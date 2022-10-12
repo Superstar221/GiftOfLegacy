@@ -1,8 +1,10 @@
 # Compatible Node Version
 node version 8.12.0
 
+# Compatible mongodb Version
+mongodb version 4.0.28
 
-### `yarn install`
+### `yarn install --ignore-engines`
 
 ## Available Scripts
 
