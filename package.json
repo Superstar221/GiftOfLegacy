@@ -7,7 +7,8 @@
   "scripts": {
     "build": "./node_modules/.bin/del -f build && tsc && ./node_modules/.bin/copyfiles src/contract/*.yaml build",
     "test": "./node_modules/.bin/del -f coverage && NODE_ENV=test ./node_modules/.bin/nyc ./node_modules/.bin/mocha -r ts-node/register ./test/*.mocha.ts",
-    "start": "node ./build/src/index"
+    "start": "node ./build/src/index",
+    "heroku-postbuild": "yarn install && yarn build && yarn start"
   },
   "nyc": {
     "include": [
