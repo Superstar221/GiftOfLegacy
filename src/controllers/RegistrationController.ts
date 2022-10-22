@@ -114,15 +114,17 @@ export class RegistrationController implements IRegistrationController {
         try
 {            if(!user){
                 user = new User;
-                console.log(user);
                 user.name = req.body.name;
                 user.surname = req.body.surname;
                 user.username = req.body.username;
                 user.tel = req.body.tel;
                 user.email = req.body.email;
                 let inviter = await User.findOne({ username: req.body.inviterusername});
-                inviter.invitedCount ++;
-                await inviter.save();
+                if(inviter){ 
+
+                    inviter.invitedCount ++;
+                    await inviter.save();
+                }
                 const salt = await bcrypt.genSalt(8);
 
                 user.password = await bcrypt.hash(req.body.password, salt);

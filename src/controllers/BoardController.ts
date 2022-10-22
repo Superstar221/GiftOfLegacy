@@ -162,6 +162,8 @@ export class BoardController implements IBoardController {
                 const {timestamp, ...decoded} = data;
                 id = decoded.id;
             });
+            console.log(id);
+            
             let board =  await Boardlist.find({ userid: id, beforeJoin: true }).populate({path: 'board'});
             // if(!board || board.length == 0){
             //     return res.status(404).send("Not found Board");
