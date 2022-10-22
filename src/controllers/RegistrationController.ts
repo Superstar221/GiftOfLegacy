@@ -44,7 +44,8 @@ export class RegistrationController implements IRegistrationController {
                         });
                     }
                     res.json({
-                        clientErrorCode: true,
+                        success: true,
+                        clientErrorCode: true
                     });
 
                 });

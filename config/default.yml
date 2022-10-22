@@ -13,8 +13,8 @@ email:
     port: 1025
     secure: false
   expirationTime: 86400
-  baseURL : http://192.168.116.120:5000
-  verificationBaseURL: http://192.168.116.120:5000/verification
+  baseURL : https://giftoflegecy.herokuapp.com
+  verificationBaseURL: https://giftoflegecy.herokuapp.com/verification
 login:
   secretKey: XXXXXX
   tokenExpiry: 20000

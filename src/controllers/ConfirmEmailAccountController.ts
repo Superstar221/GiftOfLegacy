@@ -14,6 +14,7 @@ export class ConfirmEmailAccountController implements IConfirmEmailAccountContro
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
+        console.log(id);
         registrationClient.confirmTempUser(id, (err, user) => {
             if (err) {
                 log.error('Confirming temp user FAILED', err);
@@ -21,6 +22,7 @@ export class ConfirmEmailAccountController implements IConfirmEmailAccountContro
                     errorMessage: err.message,
                 });
             }
+            console.log(user);
             if (user) {
                 if(user.referralToken != 'false'){
                     Token.findOne({token: user.referralToken}, function( err, token){
